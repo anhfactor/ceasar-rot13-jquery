@@ -14,7 +14,7 @@ Plaintext:  THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG
 Ciphertext: QEB NRFZH YOLTK CLU GRJMP LSBO QEB IXWV ALD
 Deciphering is done in reverse, with a right shift of 3.
 
-The encryption can also be represented using modular arithmetic by first transforming the letters into numbers, according to the scheme, A → 0, B → 1, ..., Z → 25.[2] Encryption of a letter x by a shift n can be described mathematically as,[3]
+The encryption can also be represented using modular arithmetic by first transforming the letters into numbers, according to the scheme, A → 0, B → 1, ..., Z → 25. Encryption of a letter x by a shift n can be described mathematically as
 
 E_{n}(x)=(x+n)\mod {26}.} E_{n}(x)=(x+n)\mod {26}.
 Decryption is performed similarly,
