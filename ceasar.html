@@ -1,0 +1,37 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+</head>
+<body style="text-align:center;margin:60px">
+<script> alert("Please input your plain Text");</script>
+<h2>Ceasar / Rot 13</h2>
+<p>Plain Text: <input id="text" size="80"></p>
+<p>Key: <input id="key" size="2" value="3"></p>
+<p>Encoded message:
+   <span id="output" style="color:red"></span></p>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script> <!--Jquery CDN-->
+<script>
+$('input').keyup(function() {
+  var k = Number($('#key').val());
+  if (!(k >=0 && k < 26)) {
+    $('#output').html('Please input key from 0 to 25');
+    return;
+  }
+  var secret = $('#text').val().toLowerCase(); /*Convert Uppercase to Lower case*/
+  var encoded = '';
+  var alphabet = 'abcdefghijklmnopqrstuvwxyz';
+  for (var j = 0; j < secret.length; j += 1) {
+    var nextchar = secret.charAt(j);
+    var index = alphabet.indexOf(nextchar);
+    if (index >= 0) {
+      var shifted = (index + k) % 26;
+      encoded += alphabet.charAt(shifted);
+    } else {
+      encoded += nextchar;
+    }
+  }
+  $('#output').html(encoded);
+});
+</script>
+</body>
+</html>
